@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario de Contacto</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      form {
+        max-width: 300px;
+        margin: auto;
+      }
+      .error {
+        color: red;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Formulario de Contacto</h2>
+    <form id="contactForm">
+      <label for="name">Nombre:</label>
+      <input type="text" id="name" name="name" />
+      <p id="nameError" class="error"></p>
+
+      <label for="email">Correo Electrónico:</label>
+      <input type="email" id="email" name="email" />
+      <p id="emailError" class="error"></p>
+
+      <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Evita el envío si hay errores
+
+          let name = document.getElementById("name").value.trim();
+          let email = document.getElementById("email").value.trim();
+          let nameError = document.getElementById("nameError");
+          let emailError = document.getElementById("emailError");
+
+          nameError.textContent = "";
+          emailError.textContent = "";
+
+          let valid = true;
+
+          // Validación del nombre
+          if (name.length < 3) {
+            nameError.textContent =
+              "El nombre debe tener al menos 3 caracteres.";
+            valid = false;
+          }
+
+          // Validación del email con regex
+          let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailRegex.test(email)) {
+            emailError.textContent = "Ingrese un correo electrónico válido.";
+            valid = false;
+          }
+
+          // Si todo está bien, se envía el formulario
+          if (valid) {
+            alert("Formulario enviado correctamente");
+            this.submit();
+          }
+        });
+    </script>
+  </body>
+</html>
