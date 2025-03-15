@@ -1,88 +1,115 @@
-// JS _ L Desarrollo de Application web
+/* Apuntes Básicos de Programación en JavaScript 
 
-// var, let, const
-var lastName = "Persona1"
-// var lastName = "Timmy" // numeros, valores.... 
-// lastName = ""
+Declaración de Variables
+En JavaScript, existen tres formas de declarar variables:
 
-// console.log(lastName); // mostramos por consola, el valor de cada variable,. const .. 
+```js
+var lastName = "Persona1"; // Variable global (evitar en código moderno)
+let firstName = "Timmy"; // Variable con alcance de bloque
+const age = 25; // Constante (no puede ser reasignada)
+```
+Tipos de Datos en JavaScript
 
+- Number**: Números enteros o decimales (`1, 0.3`)
+- **String**: Cadenas de texto (`"Hola"`, `"#@$%"`)
+- **Boolean**: Valores de verdad (`true, false`)
+- **Null**: Representa la ausencia de valor
+- **Undefined**: Valor no definido
 
-// Tipos de Datos en JS
+Ejemplo:
 
-// Número (number) = 1,, 0.3
-// Cadena caracteres (String)= "testing", "#$@#$", "11", 
-// Booleano.(Boolean) = true, false // 
+```js
+let numberExample = 42;
+let stringExample = "Hola mundo";
+let booleanExample = true;
+let nullExample = null;
+let undefinedExample;
+```
 
-// Nulo() = null 
-// Indefinido() = undefined 
+## Operadores en JavaScript
 
+### Operadores Aritméticos y Lógicos
+- `&&` (AND lógico - y)
+- `||` (OR lógico - o)
+- `===` (Comparación estricta - igual en valor y tipo)
+- `!true`, `!false` (Negación lógica)
 
+Ejemplo:
 
-// Operadores Aritmeticos
+```js
+var name = "Persona1";
+console.log(name === lastName); // Compara si name es igual a lastName
+```
 
-// && = y , || = o , === ,
-//  !true , !false
+## Condicionales en JavaScript
 
-// Ejercio
+Las estructuras condicionales permiten tomar decisiones en el código:
 
-var name = "Persona1"
-console.log(name === lastName);
+```js
+var age = 12;
+var nameAge = age + 50;
 
+if (age > 18) {
+    console.log("Es mayor de edad");
+} else if (age > 12) {
+    console.log("Es mayor a 12");
+} else {
+    console.log("No cumple ninguna condición");
+}
+```
 
+## Arreglos en JavaScript
 
-// condicionales
+Los arreglos almacenan múltiples valores en una sola variable:
 
-// if = Si = declarar 
-// elseif = 
-// else =
+```js
+const array = [110, true, 'texto', 2, 3, 3, 3];
+const array2 = ["Hola", "Mundo"] // Solo contiene strings
 
-var age = 12
-var nameAge = age + 50
+const persona = ['Timmy', 'Lopez', 27, true]; // Datos básicos de una persona
+```
 
-/*?
-else if(age > 12){
-    console.log("es mayor a cero") }
-else{
-    console.log('no es ninguna')
-}*/
+### Manipulación de Arreglos
 
-
-// Arreglo
-const array = [110, true, 'text',2,3,3,3];
-const array2 = [String] //Solo permite cosa/elementos solo strings 
-
-
-
-//[0,1,2,3,4 ....]
-const persona = ['Tmmy', 'lopex', 27, true]// Persona son datos base de una persona
-
-
+```js
 const carCopy = [];
-const model = 'Q3' //documentGetBYId ...
-carCopy.push(model)
+const model = 'Q3';
+carCopy.push(model); // Agregar elemento al array
 
-console.log(carCopy.length)
+console.log(carCopy.length); // Ver la longitud del array
 
-for (let i = 0; i < carCopy.length; i++){
-    console.log('el valor del arreglon index',[i],'es', carCopy[i])
-    if(i ==1){
-        console.log('valor de index en el car',[i],'es', carCopy[i])
+for (let i = 0; i < carCopy.length; i++) {
+    console.log('El valor del arreglo en el índice', i, 'es', carCopy[i]);
+    if (i == 1) {
+        console.log('Valor en el índice', i, 'es', carCopy[i]);
     }
 }
+```
 
-// Objeto 
-// [] = {}
+## Objetos en JavaScript
 
+Los objetos permiten almacenar información en pares clave-valor:
 
+```js
+const persona = {
+    nombre: "Juan",
+    edad: 30,
+    esEstudiante: false
+};
 
+console.log(persona.nombre); // Acceder a una propiedad
+```
 
-// Función
+## Funciones en JavaScript
 
+Las funciones permiten reutilizar código y modularizar la lógica:
 
+```js
+function saludar(nombre) {
+    return "Hola, " + nombre + "!";
+}
 
+console.log(saludar("Carlos"));
+```
 
-// Condicionales 
-
-// Estructura de datos basica:
-
+*/
